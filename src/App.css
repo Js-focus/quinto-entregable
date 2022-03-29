@@ -1,38 +1,88 @@
 .App {
   text-align: center;
+  background-color: rgb(253, 253, 253);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.pokebola{
+  animation: rotate 3s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes rotate{
+  0%{
+    transform: rotateX(0deg);
+  }
+  100%{
+    transform: rotate(1turn);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokebola{
+  width: 400px;
+  height: 400px;
+  top: -60px;
+  right: -90px;
+  background-image: url(https://mypokedex101.netlify.app/static/media/pokeball.81cfacf9.png);
+  position: fixed;
+  filter: brightness(200%);
+  z-index: -1;
+  background-size: cover;
+  
+}
+.form-user{
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items:center;
 }
-
-.App-link {
-  color: #61dafb;
+.top-form-user{
+  display: flex;
+  flex-direction: row;
 }
+.top-form-user img {
+  width: 120px;
+}
+.form-user div input{
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  font-size: 19px;
+  color: grey;
+  box-shadow:
+    -10px -10px 15px rgb(58 58 58 / 9%), 
+    10px 10px 15px rgb(66 66 66 / 35%);
+  transition: .5s;
+  padding: 0px 55px 0px 15px;
+  height: 55px;
+}
+.form-user div p{
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 400;
+  padding: 20px 0 10px;
+  margin: 0;
+  color: black;
+}
+.form-user div button{
+  position: absolute;
+  top: calc(100VH/2 - -133PX);
+  right: calc(100vw/2 - 219px);
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background: #40ff2f;
+  color: #fff;
+}
+.form-user div button i{
+  font-size: 1.3rem;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
