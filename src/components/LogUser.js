@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const LogUser = () => {
     const [userName, setUserName] = useState("");
     const dispatch = useDispatch();
-    const selector = useSelector(state => state.isLog);
-    console.log(selector)
+    const navigate = useNavigate();
+    
     const submit = (e) => {
         e.preventDefault();
         dispatch({
             type: "SET_USER_NAME",
-            payload: userName,
+            payload: userName
         })
+        navigate("/Pokedex")
     }
 
     return (

@@ -9,7 +9,7 @@ const reducer = (state = INITIAL_STATE, action) => {
             return{
                 ...state,
                 userName: action.payload,
-                isLog: true
+                isLog: !state.isLog
             } 
         default:
                 return state;
