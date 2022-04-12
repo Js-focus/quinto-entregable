@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { set_user_name } from '../redux/actions';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const LogUser = () => {
@@ -9,10 +10,9 @@ const LogUser = () => {
     
     const submit = (e) => {
         e.preventDefault();
-        dispatch({
-            type: "SET_USER_NAME",
-            payload: userName
-        })
+        dispatch(
+            set_user_name(userName)
+        )
         navigate("/Pokedex")
     }
 
